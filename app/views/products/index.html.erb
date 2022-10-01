@@ -1,8 +1,24 @@
 <h2 class="title" is-2>Top 100 Products</h2>
 <ol class="ml-5">
   <% @products.each do |product|%>
-    <li> <%= link_to product.product_name.titlecase, product %> is a food product sold in
-        <%= link_to product.manufacturing_country.name, product.manufacturing_country%>
+    <li>
+      <div class="box">
+        <article class="media">
+          <div class="media-left">
+            <figure class="image is-64x64">
+              <%= image_tag product.thumbnail, :alt => product.product_name %>
+            </figure>
+          </div>
+          <div class="media-content">
+            <div class="content">
+              <p>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= link_to product.product_name.titlecase, product %> is a food product sold in
+              <%= link_to product.manufacturing_country.name, product.manufacturing_country%>
+              </p>
+            </div>
+          </div>
+        </article>
+      </div>
     </li>
   <% end %>
 </ol>

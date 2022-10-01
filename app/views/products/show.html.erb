@@ -1,1 +1,24 @@
 <h1><%= @product.product_name.titlecase%></h1>
+
+<p>
+  <strong> Product Brand:</strong>
+  <%= @product.brand%>
+</p>
+
+<p>
+  <strong> Product URL:</strong>
+  <%= link_to "Link", @product.url%>
+</p>
+
+<p>
+  <strong> Manufacturing Country:</strong>
+  <%= link_to @product.manufacturing_country.name, @product.manufacturing_country%>
+</p>
+
+<p>
+  <strong> Product Image:</strong>
+</p>
+<p>
+  <%= image_tag @product.image, :alt => @product.product_name %>
+</p>
+
